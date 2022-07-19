@@ -10,7 +10,7 @@ def get_access_token(corpid, corpsecret):
 
 
 def get_external_group_list(access_token):
-	url = f"{base_url}externalcontact/group/list?access_token={access_token}"
+	url = f"{base_url}externalcontact/groupchat/list?access_token={access_token}"
 	data = {
 		"limit": 10,
 	}
@@ -47,7 +47,9 @@ if __name__ == '__main__':
 	corpsecret = "vrCfbb3CnBkBEIddbdaqirgLOt8hBfvXJx1BBRBBJaQ"
 	access_token = get_access_token(corpid, corpsecret)
 	print(f"access_token: {access_token}")
-	group_chat_id = "wrYG5OBwAA39To9q1UJmRqAjui4EzNdg"
-	group_info = get_external_group(access_token, group_chat_id)
-	print(f"group_info: {group_info}")
-	send_msg_to_external_group(access_token, group_chat_id, "hello")
+	group_list = get_external_group_list(access_token)
+	print(f"group_list: {group_list}")
+	# group_chat_id = "wrYG5OBwAA39To9q1UJmRqAjui4EzNdg"
+	# group_info = get_external_group(access_token, group_chat_id)
+	# print(f"group_info: {group_info}")
+	# send_msg_to_external_group(access_token, group_chat_id, "hello")
