@@ -14,6 +14,8 @@ import time
 import requests
 from wechatpy.enterprise import WeChatClient
 
+requests.adapters.DEFAULT_RETRIES = 5
+
 corpid = "ww0aa0efcebb56a94d"
 corpsecret = "vrCfbb3CnBkBEIddbdaqirgLOt8hBfvXJx1BBRBBJaQ"
 
