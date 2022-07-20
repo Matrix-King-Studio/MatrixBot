@@ -14,15 +14,13 @@ import time
 import requests
 from wechatpy.enterprise import WeChatClient
 
-requests.adapters.DEFAULT_RETRIES = 5
-
 corpid = "ww0aa0efcebb56a94d"
 corpsecret = "vrCfbb3CnBkBEIddbdaqirgLOt8hBfvXJx1BBRBBJaQ"
 
 
 def get_daily_practice(date):
 	# 获取今天每日一题
-	practice_url = "http://127.0.0.1:11111/problem/getByConditions"
+	practice_url = "http://121.37.67.75:11111/problem/getByConditions"
 	data = {"gmtCreate": date}
 	# 发送请求
 	response = requests.post(practice_url, json=data)
@@ -32,7 +30,7 @@ def get_daily_practice(date):
 
 
 def get_rank():
-	rank_url = "http://127.0.0.1:11111/blog/ranking"
+	rank_url = "http://121.37.67.75:11111/blog/ranking"
 	data = {}
 	response = requests.post(rank_url, json=data)
 	data = response.json()
